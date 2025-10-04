@@ -1,7 +1,8 @@
 # Bun TS CLI Starter
 
+![GitHub Release](https://img.shields.io/github/v/release/deepfriedmind/bun-ts-cli-starter)
 ![GitHub License](https://img.shields.io/github/license/deepfriedmind/bun-ts-cli-starter)
-![Node Current](https://img.shields.io/node/v/bun-ts-cli-starter?label=Runs+in+Node)
+![Node version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdeepfriedmind%2Fbun-ts-cli-starter%2Frefs%2Fheads%2Fmain%2Fpackage.json&query=engines.node&logo=nodedotjs&label=Runs%20in%20Node)
 ![Bun version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdeepfriedmind%2Fbun-ts-cli-starter%2Frefs%2Fheads%2Fmain%2Fpackage.json&query=devEngines.runtime.version&logo=bun&label=Developed+with+bun)
 ![GitHub top language](https://img.shields.io/github/languages/top/deepfriedmind/bun-ts-cli-starter)
 [![Checked with Biome](https://img.shields.io/badge/Checked_with-Biome-60a5fa?logo=biome)](https://biomejs.dev)
