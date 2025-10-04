@@ -34,4 +34,4 @@ if (isMainModule()) {
 }
 
 // Export main function for testing
-export type { main }
+export { main }

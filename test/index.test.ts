@@ -1,9 +1,16 @@
 import { describe, expect, test } from 'bun:test'
 
 describe('main entry point', () => {
-  test('should handle direct execution check', () => {
-    // Test that the module checks import.meta.url for direct execution
-    // This is tested implicitly by the fact that the module loads without error
-    expect(import.meta.url.startsWith('file://')).toBe(true)
+  test('should have correct execution logic', async () => {
+    // Test that the main function exists and is properly exported
+    const { main } = await import('../src/index')
+    expect(typeof main).toBe('function')
+  })
+
+  test('should handle basic import without errors', () => {
+    // Test that we can import the main module without issues
+    expect(() => {
+      import('../src/index')
+    }).not.toThrow()
   })
 })
