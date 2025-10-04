@@ -1,0 +1,94 @@
+{
+  "name": "bun-ts-cli-starter",
+  "displayName": "Bun TS CLI Starter",
+  "version": "1.0.0",
+  "description": "My starter kit for developing CLI apps with Bun, TypeScript and other useful tools.",
+  "keywords": [
+    "cli",
+    "bun",
+    "typescript"
+  ],
+  "homepage": "https://github.com/deepfriedmind/bun-ts-cli-starter#readme",
+  "bugs": {
+    "url": "https://github.com/deepfriedmind/bun-ts-cli-starter/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deepfriedmind/bun-ts-cli-starter.git"
+  },
+  "license": "MIT",
+  "author": "deepfriedmind",
+  "type": "module",
+  "exports": "./dist/index.js",
+  "main": "dist/index.js",
+  "bin": {
+    "bun-ts-cli-starter": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "bun clean && bun build src/index.ts --outdir dist --target node --minify",
+    "check": "bun fix && bun type-check && bun knip && bun test && bun run build",
+    "clean": "rm -rf dist",
+    "fix": "bun ultracite fix",
+    "knip": "knip",
+    "lint": "bun ultracite check",
+    "lint:summary": "biome check --reporter=summary --max-diagnostics none",
+    "prepare": "bunx simple-git-hooks",
+    "release": "dotenv release-it --",
+    "start": "bun src/index.ts",
+    "test": "bun test",
+    "test:coverage": "bun test --coverage",
+    "test:integration": "bun test integration.test.ts",
+    "test:watch": "bun test --watch",
+    "type-check": "tsc --noEmit"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "bun check",
+    "prepare-commit-msg": "bunx devmoji --edit"
+  },
+  "overrides": {
+    "conventional-changelog-conventionalcommits": "8.0.0"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.11.0",
+    "commander": "^14.0.1",
+    "consola": "^3.4.2",
+    "figlet": "^1.9.3",
+    "gradient-string": "^3.0.0",
+    "terminal-link": "^5.0.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.2.5",
+    "@release-it/conventional-changelog": "^10.0.1",
+    "@tsconfig/bun": "^1.0.8",
+    "@types/bun": "^1.2.23",
+    "devmoji": "^2.3.0",
+    "dotenv-cli": "^10.0.0",
+    "knip": "^5.64.1",
+    "release-it": "^19.0.5",
+    "simple-git-hooks": "^2.13.1",
+    "typescript": "^5.9.3",
+    "ultracite": "5.5.0"
+  },
+  "packageManager": "bun@1.2.23",
+  "engines": {
+    "node": ">= 16"
+  },
+  "os": [
+    "darwin"
+  ],
+  "devEngines": {
+    "runtime": {
+      "name": "bun",
+      "version": ">= 1.2.0",
+      "onFail": "warn"
+    },
+    "packageManager": {
+      "name": "bun",
+      "version": ">= 1.2.0",
+      "onFail": "warn"
+    }
+  }
+}

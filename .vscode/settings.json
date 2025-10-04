@@ -1,0 +1,60 @@
+{
+  "[javascript][typescript][javascriptreact][typescriptreact][json][jsonc][css][graphql]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "cSpell.ignorePaths": [
+    "bun.lock",
+    "node_modules",
+    "vscode-extension",
+    ".git/{info,lfs,logs,refs,objects}/**",
+    ".git/{index,*refs,*HEAD}",
+    ".vscode",
+    ".vscode-insiders",
+    "CHANGELOG.md"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": false,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "emmet.showExpandedAbbreviation": "never",
+  "explorer.excludeGitIgnore": true,
+  "explorerExclude.backup": {},
+  "files.readonlyInclude": {
+    "CHANGELOG.md": true,
+    "bun.lock": true,
+    "coverage/**/*": true,
+    "dist/**/*": true,
+    "node_modules/**/*": true
+  },
+  "git.inputValidationSubjectLength": 72,
+  "npm.packageManager": "bun",
+  "peacock.color": "#f472b6",
+  "search.exclude": {
+    "bun.lock": true
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "workbench.colorCustomizations": {
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#f8a1ce",
+    "tab.activeBorder": "#f8a1ce",
+    "titleBar.activeBackground": "#f472b6",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#f472b699",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/.hg/store/**": true,
+    "**/.git/**": true,
+    "**/node_modules/**": true,
+    "**/.vscode/**": true
+  }
+}
