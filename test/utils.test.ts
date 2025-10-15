@@ -1,7 +1,6 @@
 import { afterEach, beforeEach, describe, expect, mock, test } from 'bun:test'
 import packageJson from '../package.json' with { type: 'json' }
 import { generateLogo, inlineCode, isMainModule } from '../src/utils'
-import { createFigletMock } from './mocks'
 
 describe('Utils', () => {
   afterEach(() => {
@@ -9,16 +8,25 @@ describe('Utils', () => {
   })
 
   describe('generateLogo', () => {
-    test('should generate a logo', () => {
-      const logo = generateLogo('Test')
+    test('should generate a logo', async () => {
+      // Mock oh-my-logo to return a successful result
+      mock.module('oh-my-logo', () => ({
+        renderFilled: async () => 'Mocked ASCII Art Logo\nFor Test Text',
+      }))
+      const logo = await generateLogo('Test')
       expect(logo).toBeString()
       expect(logo).not.toBe('Test')
+      expect(logo).toBe('Mocked ASCII Art Logo\nFor Test Text')
     })
 
-    test('should return the text if figlet throws an error', () => {
-      // Mock figlet to throw an error
-      mock.module('figlet', createFigletMock)
-      const logo = generateLogo('Test')
+    test('should return the text if renderFilled returns undefined', async () => {
+      // Mock oh-my-logo to return undefined
+      mock.module('oh-my-logo', () => ({
+        renderFilled: async () => {
+          // Intentionally empty to return undefined
+        },
+      }))
+      const logo = await generateLogo('Test')
       expect(logo).toBe('Test')
     })
   })

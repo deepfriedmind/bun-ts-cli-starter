@@ -67,20 +67,6 @@ export function restoreProcessExitMock(): void {
 }
 
 /**
- * Create figlet mock for testing generateLogo error scenarios
- */
-export function createFigletMock() {
-  return {
-    __esModule: true,
-    default: {
-      textSync: () => {
-        throw new Error('Figlet error')
-      },
-    },
-  }
-}
-
-/**
  * Create spinner mock for testing displayWelcome spinner behavior
  */
 export function createSpinnerMock() {

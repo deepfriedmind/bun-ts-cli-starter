@@ -1,6 +1,5 @@
 import { colors } from 'consola/utils'
-import figlet from 'figlet'
-import gradient from 'gradient-string'
+import { renderFilled } from 'oh-my-logo'
 import packageJson from '../package.json' with { type: 'json' }
 
 /**
@@ -9,13 +8,14 @@ import packageJson from '../package.json' with { type: 'json' }
  * @param text - The text to convert into ASCII art.
  * @returns The ASCII art representation of the text, or the original text if generation fails.
  */
-export function generateLogo(text = '') {
+export async function generateLogo(text = '') {
   try {
-    return gradient(['#FA769F', '#A9E8FD']).multiline(
-      figlet.textSync(text, {
-        font: 'RubiFont',
-      }),
-    )
+    const result = await renderFilled(text, {
+      font: 'slick',
+      letterSpacing: 0,
+      palette: ['#FA769F', '#A9E8FD'],
+    })
+    return result ?? text
   } catch {
     return text
   }

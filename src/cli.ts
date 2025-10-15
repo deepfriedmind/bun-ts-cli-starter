@@ -1,7 +1,7 @@
 import { spinner } from '@clack/prompts'
 import { Command } from 'commander'
 import { consola } from 'consola'
-import { box, colors } from 'consola/utils'
+import { colors } from 'consola/utils'
 import terminalLink from 'terminal-link'
 import packageJson from '../package.json' with { type: 'json' }
 import type { CliOptions } from './types'
@@ -71,12 +71,9 @@ function handleParsingError(error: unknown): never {
 /**
  * Display welcome message
  */
-export function displayWelcome() {
-  consola.log(
-    box(generateLogo(packageJson.displayName), {
-      style: { borderColor: 'magentaBright' },
-    }),
-  )
+export async function displayWelcome() {
+  // Generate logo but don't log the result
+  await generateLogo(packageJson.displayName)
   consola.info("I'm an info message.")
   consola.success("I'm a success message.")
   consola.log(
