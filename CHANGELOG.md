@@ -1,5 +1,7 @@
 # Changelog
 
+## [1.1.1](https://github.com/deepfriedmind/bun-ts-cli-starter/compare/1.1.0...1.1.1) (2025-10-18)
+
 ## [1.1.0](https://github.com/deepfriedmind/bun-ts-cli-starter/compare/1.0.0...1.1.0) (2025-10-15)
 
 ### Features
